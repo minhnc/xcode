@@ -107,7 +107,7 @@ export class PBXNativeTarget extends AbstractTarget<PBXNativeTargetModel> {
 
     // TODO: This might need OS-specific checks like https://github.com/CocoaPods/Xcodeproj/blob/ab3dfa504b5a97cae3a653a8924f4616dcaa062e/lib/xcodeproj/project/object/native_target.rb#L322-L328
     const getFrameworkFileReference = (name: string): PBXFileReference => {
-      const frameworkName = name.endsWith(".framework")
+      const frameworkName = name.endsWith(".framework") || name.endsWith(".xcframework")
         ? name
         : name + ".framework";
 
